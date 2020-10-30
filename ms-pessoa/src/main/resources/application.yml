@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: ms-pessoa
+  h2:
+    console:
+      settings:
+        trace: true
+  datasource:
+    url: jdbc:h2:file:./mspessoa
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+  jackson:
+    date-format: dd-MM-yyyy
+    deserialization:
+      fail-on-unknown-properties: false
+server:
+  port: 6060
+
+eureka:
+  client:
+    service-url:
+      default-zone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    prefer-ip-address: true
